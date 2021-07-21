@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.mar3{
+	margin-top: 1.5%;
+	margin-bottom: 3%;
+	text-align: center;
+}
+
+.devide {
+  width: 70%;
+  border: 1px solid gray;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.contain {
+  width: 70%;
+  height: 180px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.pic {
+	height: 150px;
+	cursor: pointer;
+}
+.content {
+  width: 20%;
+  height: 150px;
+}
+
+.btnsize {
+  margin-top: 65px;
+  height: 150px;
+}

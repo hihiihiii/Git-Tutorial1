@@ -1,0 +1,173 @@
+@charset "UTF-8";
+ 
+.head {
+  text-align: center;
+  background-color: #fdf8ef;
+  width: 80%;
+  height: 130px;
+  margin: 0 auto;
+}
+
+.box1 {
+  width: 80%;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.td1 {
+  width: 20%;
+  background-color: #f4eee3;
+  font-size: 15px;
+  padding-right: 0;
+}
+
+.td2 {
+  width: 60%;
+  background-color: white;
+  font-size: 18px;
+  padding-left: 0;
+}
+
+.tex1 {
+  width: 80%;
+  height: 230px;
+  margin: 0 auto;
+}
+
+.kind {
+  width: 80%;
+  height: 150px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.pyo {
+  width: 100%;
+  height: 150px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+}
+.vertical1 {
+  border-left-style: hidden;
+  font-weight: bolder;
+}
+.vertical2 {
+  border-right-style: hidden;
+}
+.horizon {
+  border-top-style: hidden;
+}
+
+.contain1 {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.imgbox {
+  width: 49%;
+}
+.img2 {
+  width: 100%;
+  height: 300px;
+}
+.rig2 {
+  padding-right: 2%;
+}
+.lef2 {
+  margin-left: 2%;
+}
+
+.pbottom0 {
+  margin-bottom: 0%;
+}
+
+.ptop {
+  margin-top: 0%;
+}
+
+.pbottom {
+  margin-bottom: 1%;
+}
+
+.prop1{
+	margin-top: 1%;
+}
+
+.pp {
+  width: 80%;
+  margin: auto;
+  /* height: ; */
+}
+
+.height1 {
+  height: 650px;
+}
+
+.height2 {
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.notice {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  background-color: burlywood;
+  border: 1px solid #f4eee3;
+}
+
+.ppp {
+  width: 90%;
+  margin: auto;
+}
+
+#hdn {
+  float: right;
+  cursor: pointer;
+}
+#hdn1 {
+  float: right;
+  cursor: pointer;
+}
+#notice1 {
+  /* visibility: hidden; */
+  /* display: none; */
+  width: 80%;
+  height: 500px;
+  margin: auto;
+  background-color: #fdf8ef;
+  border: 1px solid #f4eee3;
+}
+
+#textrig {
+  text-align: right;
+}
+
+.mar5 {
+  margin-top: 5%;
+}
+
+#notice2 {
+  /* visibility: hidden; */
+  /* display: none; */
+  width: 80%;
+  margin: auto;
+  background-color: #fdf8ef;
+  border: 1px solid #f4eee3;
+}
+
+.endbtn{
+	padding-top: 30px;
+	height: 30px;
+	margin: auto;
+	text-align: center;
+}
+

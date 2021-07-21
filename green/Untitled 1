@@ -1,0 +1,147 @@
+약관동의서 -> 정보입력 -> 회원가입
+
+컨텍스트 패스/register/step1 => DispatherServlet
+							 
+							 => HandlerMapping
+							 
+							 => RegistController
+							 
+							 => HandlerAdapter
+							 
+							 => 경로에 맞는 컨트롤러 내부의 해당 메소드 실행
+							 
+							 ModelAndView(결과물)  <= 
+							 
+							 DispatcherServlet 
+							 
+							 => ViewResolver 'ModelAndView'  => 반환 문자열
+							 		/WEB-INF/views/반환 문자열.jsp
+							 
+							 DispatcherServlet <=
+							 뷰를 검색
+							 
+							 /WEB-INF/views/반환 문자열.jsp
+							 
+							 =>/WEB-INF/views/register/step1.jsp
+
+--------------------------------------------------------------------							 
+MVC에서 제공하는 커스텀 태그
+
+<form:form>		=> <form>태그 구성
+
+<form:form 속성>
+
+</form:form>
+속성
+	- method="값" 기본값 post
+	- action="경로" 기본값 현재 페이지
+	- entype ="" 인코딩 방식
+	- commandName="" 커맨드 객체의 이름 기본값 'command'
+------------------------------------------------------------------------
+
+<form:input>	=> <input type="text">
+<form:password>	=> <input type="password">
+<form:hidden>	=> <input type="hidden">
+
+속성 
+path=""	커맨드 객체에 저장된 데이터를 꺼내온다
+
+->
+
+<form:input path="hobby"/>
+=>	
+<input type="text" value="${커맨드객체.hobby}" id="hobby" name="hobby"/>
+
+----------------------------------------------------------------------------
+
+<form:textarea>	=>	<textarea>
+
+<form:textarea path="etc" cols="20" rows="3" />
+=>
+<textarea id="etc" name="etc" cols="20" rows="3">${커맨드객체.etc}</textarea>
+
+------------------------------------------------------------------------------
+
+<form:select>	=>	<select> 	=> 내부적으로 option을 생성한다.
+<form:options>
+<form:option>
+
+Model객체를 통해서 데이터를 넘겨 받을 때 배열이나 리스트형태로 받는다
+
+List<String> slist = new ArrayList();
+slist.add("aa");
+slist.add("bb");
+slist.add("cc");
+
+model.addAttribute("list",slist);
+
+-------------------------------------------------------------------
+
+<form:select path="list" items="${list}"/>
+
+=>
+
+<select id="list" name="list">
+	<option value="aa">aa</option>
+	<option value="bb">cc</option>
+	<option value="cc">cc</option>
+</select>
+
+
+
+-------------------------------------------------------------------------
+
+커맨드 객체 => 여러개의 데이터를 한꺼번에 처리하기 위한 목적
+			   기본타입 int, double, String...
+			   
+			   => 1. 리스트, 배열
+			   	  2. 중첩
+
+
+AnsweredData ad = new AnsweredData();
+
+ad.getResponse()	=> 데이터의 정체 => 리스트
+						=> 실제 필요한 데이터는 리스트 내부에 존재하는 데이터
+
+1. 
+ad.getResponse().get(0)	
+	=> 커맨드 객체로 사용할 때 : ${formData.response[0]}
+
+List<String> list = ad.getResponse() 
+list.get(0)						
+			   	  
+2.
+add.getRed()	=>	데이터의 정체	=> 또 다른 객체(Respondent)
+				=> 실제 필요한 데이터는 객체 내부에 존재하는 속성 데이터
+				
+add.getRed().getAge()
+	=> 커맨드 객체로 사용할 때 : ${formData.red.age}
+-------------------------------------------------------------------------------
+
+RegisterRequest rr = new RegisterRequest();
+rr.getEamil()	=> 실제 필요한 데이터
+	=> 커맨드 객체로 사용할 때 : ${formData.email}
+	
+-----------------------------------------------------------------
+
+서버 시작 => 주소창 /survey 입력(get)
+			=> Form 뷰 페이지
+			=> 데이터 입력 => submit 버튼 누르면 => 컨트롤러 => /survey(post)
+			=> submitted.jsp에서 표시 
+	
+------------------------------------------------------------------
+에러 코드를 생성하는 방법
+
+1. 객체 검증하는 클래스 제작 : implements Validator
+	validate() 메소드 생성
+	검증 코드를 작성해서 에러 코드를 생성 => Errors 객체에 에러코드를 담는다.
+
+2. controller에서(객체 검증을 위한 Errors를 매개로 가져온다) 객체 검증 클래스를 이용해서 객체 검증을 한다.
+	errors.hasError()가 true면 에러 발생 => 이전 폼으로 돌아간다. 
+						false면 그냥 진행
+
+폼.jsp => <form:error path="에러코드"></form:errors>
+		=> <span><spring:message code="에러코드"></spring:message></span>
+		
+
+	

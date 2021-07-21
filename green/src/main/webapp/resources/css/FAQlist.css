@@ -1,0 +1,119 @@
+
+.jumbotron{
+    /* text-shadow: black 0.2em 0.2em 0.2em; */
+    background-size: cover;
+    color: black;
+    margin : 1px;
+}
+
+.top{
+	border-bottom: solid 1px black;
+}
+
+.search{
+    background-size: cover;
+}
+
+.search_detail{
+    background-size: cover;
+    margin: 0;
+    padding: 10px;
+    text-align: right;
+}
+
+.num{
+    width: 50px;
+    text-align: center;
+}
+.writer{
+    text-align: center;
+    width: 60px;
+}
+.writedate{
+    text-align: center;
+    width: 90px;
+}
+.title{
+    text-align: center;
+}
+.title_con{
+    text-align: left;
+    
+}
+
+.title_con:hover{
+	cursor: pointer;
+}
+
+.form{
+    margin-bottom: 10px;
+    text-align: right;
+}
+.page{
+    text-align: center;
+    height: 50px;
+    border: soild 1px black;
+}
+
+.container{
+	padding-top: 150px;
+}
+
+.pagintion{
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.pagintion >li{
+	display: inline;
+}
+
+.pagintion > li > a{
+	padding: 6px 12px;
+  margin-left: 1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  float: left;
+}
+
+  .answer {
+    display: none;
+    padding-bottom: 30px;
+  }
+  #faq-title {
+    font-size: 25px;
+  }
+  .faq-content {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+.QnA_ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.QnA_A {
+	width: 100%;
+	height: auto;
+	padding-left: 136px;
+	border-top: 1px solid #ddd;
+}
+
+#fist {
+	background: #faf9f4;
+	border-top : 1px solid #ddd;
+	text-align: left;
+}
+
+.fist{
+	margin: 5px;
+	text-align: center;
+	width: 120px;
+	display: inline-block;
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.cart{
+	display: flex;
+}
+
+.bor{
+	border-collapse: collapse;
+}
